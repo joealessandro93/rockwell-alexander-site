@@ -667,21 +667,7 @@ function renderFileList(type) {
 });
 
 // --- FORM SUBMISSION ---
-// ============================================================
-// BACKEND INTEGRATION PLACEHOLDER
-// Replace this function body with your form service of choice:
-//
-// OPTION A: Web3Forms (free, supports attachments)
-//   1. Sign up at https://web3forms.com and get your access_key
-//   2. Uncomment the Web3Forms code below and add your key
-//
-// OPTION B: Formspree (free 50 submissions/month)
-//   1. Create a form at https://formspree.io
-//   2. POST the FormData to your Formspree endpoint
-//
-// OPTION C: Custom backend
-//   POST the FormData to your own API endpoint
-// ============================================================
+
 function submitForm(type) {
   const section = document.getElementById('form-' + type);
   const required = section.querySelectorAll('[required]');
@@ -715,23 +701,31 @@ function submitForm(type) {
     formData.append('attachments', file, file.name);
   });
 
-  // --- UNCOMMENT ONE OF THESE TO ENABLE SUBMISSION ---
+  // Web3Forms integration
+  formData.append('access_key', 'fbe2da36-3499-42de-b52e-ae49b0aa2226');
+  formData.append('subject', 'New ' + type + ' lease application — Rockwell Alexander');
+  formData.append('from_name', 'Rockwell Alexander Website');
 
-  // // WEB3FORMS:
-  // formData.append('access_key', 'YOUR-ACCESS-KEY-HERE');
-  // formData.append('subject', 'New ' + type + ' lease application — Rockwell Alexander');
-  // fetch('https://api.web3forms.com/submit', { method: 'POST', body: formData })
-  //   .then(r => r.json())
-  //   .then(data => { if (data.success) showSuccess(); else alert('Error submitting. Please try again.'); })
-  //   .catch(() => alert('Network error. Please try again.'));
+  const btn = section.querySelector('.btn-submit');
+  btn.disabled = true;
+  btn.textContent = 'SUBMITTING...';
 
-  // // FORMSPREE:
-  // fetch('https://formspree.io/f/YOUR-FORM-ID', { method: 'POST', body: formData })
-  //   .then(r => { if (r.ok) showSuccess(); else alert('Error submitting. Please try again.'); })
-  //   .catch(() => alert('Network error. Please try again.'));
-
-  // FOR NOW: just show success (remove this line when backend is connected)
-  showSuccess();
+  fetch('https://api.web3forms.com/submit', { method: 'POST', body: formData })
+    .then(r => r.json())
+    .then(data => {
+      if (data.success) {
+        showSuccess();
+      } else {
+        alert('Error submitting application. Please try again.');
+        btn.disabled = false;
+        btn.textContent = 'SUBMIT APPLICATION';
+      }
+    })
+    .catch(() => {
+      alert('Network error. Please check your connection and try again.');
+      btn.disabled = false;
+      btn.textContent = 'SUBMIT APPLICATION';
+    });
 }
 
 function showSuccess() {
