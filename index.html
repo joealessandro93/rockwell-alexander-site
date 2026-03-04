@@ -93,21 +93,7 @@ nav.scrolled{background:rgba(13,13,13,0.97);backdrop-filter:blur(20px);padding:1
 .value-item:hover{border-color:rgba(201,168,76,0.2)}
 .value-item h4{font-family:var(--serif);font-size:1.1rem;font-weight:500;color:var(--cream);margin-bottom:0.3rem}
 .value-item p{font-size:0.78rem;line-height:1.6;margin-bottom:0}
-.team-section{max-width:1100px;margin:0 auto;padding:0 3rem 6rem;display:flex;flex-direction:column;gap:4rem}
-.team-member{display:grid;grid-template-columns:280px 1fr;gap:3.5rem;align-items:start}
-.member-photo{position:relative}
-.photo-placeholder{width:280px;height:340px;background:linear-gradient(135deg,var(--charcoal),var(--graphite));border:1px solid rgba(201,168,76,0.15);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-.photo-placeholder::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 40%,rgba(201,168,76,0.04) 100%)}
-.photo-placeholder span{font-family:var(--serif);font-size:3.5rem;font-weight:300;color:rgba(201,168,76,0.2);font-style:italic;position:relative;z-index:1}
-.member-info{padding-top:0.5rem}
-.member-role{font-size:0.6rem;font-weight:500;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem}
-.member-name{font-family:var(--serif);font-size:2.2rem;font-weight:400;color:var(--white);line-height:1.2;margin-bottom:1rem}
-.member-divider{width:50px;height:2px;background:var(--gold);margin-bottom:1.5rem}
-.member-bio{font-size:0.88rem;font-weight:300;color:var(--silver);line-height:1.85;margin-bottom:1rem}
-.member-bio:last-of-type{margin-bottom:0}
-.member-philosophy{font-family:var(--serif);font-size:1.1rem;font-weight:400;font-style:italic;color:var(--pearl);line-height:1.6;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.06);padding-left:1.2rem;border-left:2px solid var(--gold)}
-@media(max-width:1024px){.team-member{grid-template-columns:220px 1fr;gap:2.5rem}.photo-placeholder{width:220px;height:270px}}
-@media(max-width:768px){.team-member{grid-template-columns:1fr;gap:2rem}.photo-placeholder{width:100%;max-width:280px;height:300px}.team-section{padding:0 1.5rem 4rem}}
+
 .cta-banner{padding:5rem 3rem;background:linear-gradient(135deg,var(--charcoal) 0%,rgba(201,168,76,0.08) 50%,var(--charcoal) 100%);border-top:1px solid rgba(201,168,76,0.1);border-bottom:1px solid rgba(201,168,76,0.1);text-align:center}
 .cta-banner h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:300;color:var(--white);margin-bottom:1rem}
 .cta-banner p{font-size:0.95rem;font-weight:300;color:var(--silver);margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.7}
@@ -127,7 +113,7 @@ footer{padding:4rem 3rem 2rem;border-top:1px solid rgba(201,168,76,0.1);backgrou
 .footer-social a{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.08);color:var(--silver);text-decoration:none;font-size:0.8rem;transition:all 0.3s}
 .footer-social a:hover{border-color:var(--gold);color:var(--gold)}
 @media(max-width:1024px){.properties{grid-template-columns:1fr 1fr;gap:1.5rem;padding:0 2rem 4rem}.about{grid-template-columns:1fr;gap:3rem;padding:4rem 2rem}.about-visual{height:350px}.footer-top{grid-template-columns:1fr 1fr}}
-@media(max-width:768px){nav{padding:1rem 1.5rem;position:relative}.nav-links{display:none}.nav-links.show{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(13,13,13,0.98);padding:1.5rem 2rem;gap:0;border-bottom:1px solid rgba(201,168,76,0.15);z-index:100;backdrop-filter:blur(10px)}.nav-links.show li a{padding:0.8rem 0;display:block;font-size:0.9rem}.menu-toggle{display:block}.properties{grid-template-columns:1fr;padding:0 1.5rem 4rem}.stats{grid-template-columns:repeat(2,1fr)}.stat-item{padding:2rem 1rem}.footer-top{grid-template-columns:1fr;gap:2rem}.footer-bottom{flex-direction:column;gap:1rem;text-align:center}.hero h1{font-size:2.2rem}.hero p{font-size:0.85rem;padding:0 1rem}.section-header{padding:3rem 1.5rem 2rem}.section-header h2{font-size:1.8rem}.about-text h2{font-size:1.8rem}.cta-banner{padding:3rem 1.5rem}.cta-banner h2{font-size:1.5rem}.member-name{font-size:1.6rem}.member-bio{font-size:0.82rem;line-height:1.7}.member-philosophy{font-size:0.95rem}}
+@media(max-width:768px){nav{padding:1rem 1.5rem;position:relative}.nav-links{display:none}.nav-links.show{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(13,13,13,0.98);padding:1.5rem 2rem;gap:0;border-bottom:1px solid rgba(201,168,76,0.15);z-index:100;backdrop-filter:blur(10px)}.nav-links.show li a{padding:0.8rem 0;display:block;font-size:0.9rem}.menu-toggle{display:block}.properties{grid-template-columns:1fr;padding:0 1.5rem 4rem}.stats{grid-template-columns:repeat(2,1fr)}.stat-item{padding:2rem 1rem}.footer-top{grid-template-columns:1fr;gap:2rem}.footer-bottom{flex-direction:column;gap:1rem;text-align:center}.hero h1{font-size:2.2rem}.hero p{font-size:0.85rem;padding:0 1rem}.section-header{padding:3rem 1.5rem 2rem}.section-header h2{font-size:1.8rem}.about-text h2{font-size:1.8rem}.cta-banner{padding:3rem 1.5rem}.cta-banner h2{font-size:1.5rem}}
 .js-enabled .reveal{opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.25,0.46,0.45,0.94)}
 .js-enabled .reveal.visible{opacity:1;transform:translateY(0)}
 </style>
@@ -197,43 +183,6 @@ footer{padding:4rem 3rem 2rem;border-top:1px solid rgba(201,168,76,0.1);backgrou
   </div>
 </section>
 
-<!-- Leadership -->
-<div class="section-header reveal" id="leadership" style="border-top:1px solid rgba(201,168,76,0.1)">
-  <p class="eyebrow">Leadership</p>
-  <h2>The Team Behind<br>Rockwell Alexander</h2>
-</div>
-
-<section class="team-section">
-
-  <div class="team-member reveal">
-    <div class="member-photo">
-      <div class="photo-placeholder"><span>RA</span></div>
-    </div>
-    <div class="member-info">
-      <p class="member-role">Founder</p>
-      <h3 class="member-name">Rocco Alessandro</h3>
-      <div class="member-divider"></div>
-      <p class="member-bio">Bio coming soon.</p>
-    </div>
-  </div>
-
-  <div class="team-member reveal">
-    <div class="member-photo">
-      <div class="photo-placeholder"><span>JA</span></div>
-    </div>
-    <div class="member-info">
-      <p class="member-role">Principal</p>
-      <h3 class="member-name">Joe Alessandro</h3>
-      <div class="member-divider"></div>
-      <p class="member-bio">Joe Alessandro is a New York-based real estate investor and property manager specializing in commercial properties. His work centers on acquiring, operating, and strategically managing mixed-use assets with a focus on long-term value creation and strong tenant relationships.</p>
-      <p class="member-bio">Joe's professional background includes property management experience with Cushman &amp; Wakefield, where he was involved in managing one of New York City's most iconic skyscrapers, the Chrysler Building. Managing a landmark asset of this scale provided him with direct exposure to complex building systems, high-profile tenants, capital projects, and institutional ownership standards. This experience shaped his disciplined, operationally focused approach to real estate.</p>
-      <p class="member-bio">In addition to large-scale institutional assets, Joe is actively involved in the oversight and management of neighborhood retail centers and mixed-use properties throughout Westchester and the greater New York market. Each property is important because it helps shape the character and quality of the surrounding neighborhood. Joe is committed to contributing to strong, vibrant communities through thoughtful ownership and management. He views every property as part of a larger neighborhood ecosystem and every tenant as a partnership, emphasizing a strong tenant mix, efficient operations, and synergistic relationships.</p>
-      <p class="member-bio">Joe is currently pursuing a Master of Science in Real Estate at Fordham University, further strengthening his expertise in finance, development, and asset management.</p>
-      <p class="member-philosophy">"Invest with discipline, operate with precision, and build assets that serve both tenants and the surrounding community."</p>
-    </div>
-  </div>
-
-</section>
 
 <section class="cta-banner reveal">
   <h2>Ready to Lease?</h2>
