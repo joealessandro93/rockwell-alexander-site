@@ -138,12 +138,12 @@ footer{padding:4rem 3rem 2rem;border-top:1px solid rgba(201,168,76,0.1);backgrou
 <section class="hero">
   <div class="hero-bg"></div><div class="hero-lines"></div>
   <div class="hero-content">
-    <h1>Commercial Real Estate</h1>
+    <h1>Where Neighborhoods Come Together</h1>
     <p class="hero-eyebrow">Retail &middot; Multifamily</p>
     <p class="hero-desc">Rockwell Alexander Corp. acquires, develops, and manages premier retail and multifamily properties across the New York metropolitan area.</p>
     <div class="hero-buttons">
-      <a href="#properties" class="btn-primary">View Portfolio</a>
-      <a href="apply.html" class="btn-outline">Inquire About Availability</a>
+      <a href="apply.html" class="btn-primary">Inquire About Availability</a>
+      <a href="#properties" class="btn-outline">View Portfolio</a>
     </div>
   </div>
   <div class="scroll-indicator"><span>Scroll</span><div class="scroll-line"></div></div>
@@ -151,7 +151,7 @@ footer{padding:4rem 3rem 2rem;border-top:1px solid rgba(201,168,76,0.1);backgrou
 
 
 
-<div class="section-header reveal" id="properties"><p class="eyebrow">Our Portfolio</p><h2>Commercial Holdings</h2><p>Retail storefronts and multifamily units across Westchester, the Bronx, and Long Island.</p></div>
+<div class="section-header reveal" id="properties"><p class="eyebrow">Commercial Holdings</p><h2>Our Portfolio</h2><p>Retail storefronts and multifamily units across Westchester, the Bronx, and Long Island.</p></div>
 
 <section class="properties">
   <div class="property-card reveal">
@@ -215,4 +215,4 @@ if('IntersectionObserver' in window){
 const observer=new IntersectionObserver((entries)=>{entries.forEach((entry)=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}})},{threshold:0.05,rootMargin:'0px 0px 50px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 }else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'))}
-document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();co
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDe
