@@ -129,15 +129,13 @@ nav{padding:1rem 1.5rem}
   <ul class="nav-links">
     <li><a href="index.html#portfolio">Portfolio</a></li>
     <li><a href="index.html#about">About</a></li>
-    <li><a href="apply.html" style="color:var(--gold)">Apply</a></li>
+    <li><a href="apply.html" style="color:var(--gold)">Inquire About Availability</a></li>
   </ul>
 </nav>
 
 <header class="page-header">
-  <p class="eyebrow">Lease Application</p>
-  <h1>Apply for a Space</h1>
-  <p>Complete the application below. All information is kept confidential and used solely for tenancy evaluation purposes.</p>
-  <p style="margin-top:1.5rem"><a href="RA_Commercial_Lease_Application.pdf" download style="color:var(--gold);font-size:0.75rem;font-weight:400;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.3);padding-bottom:2px;transition:border-color 0.3s" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.3)'">&#8595; Download PDF Application</a><span style="display:block;margin-top:0.5rem;font-size:0.72rem;color:var(--slate);font-weight:300">Prefer paper? Download, print, and submit in person.</span></p>
+  <h1 style="color:var(--gold)">Inquire About Availability</h1>
+  <p>Submit your inquiry below and a representative will be in touch to discuss timeline of availability. All information is kept confidential and used solely for tenancy evaluation purposes.</p>
 </header>
 
 <!-- APPLICATION TYPE TOGGLE -->
@@ -172,29 +170,21 @@ nav{padding:1rem 1.5rem}
     <p>Tell us about your business</p>
   </div>
 
-  <div class="form-group form-row">
-    <div>
-      <label class="form-label">Business / Entity Name <span class="required">*</span></label>
-      <input type="text" class="form-input" name="c_business_name" placeholder="Legal business name" required>
-    </div>
-    <div>
-      <label class="form-label">DBA (if different)</label>
-      <input type="text" class="form-input" name="c_dba" placeholder="Doing business as">
-    </div>
+  <div class="form-group" style="max-width:300px;margin-left:auto;margin-right:auto">
+    <label class="form-label">New or Existing Business</label>
+    <select class="form-select" name="c_business_status">
+      <option value="" disabled selected>Select</option>
+      <option>New Business</option>
+      <option>Existing Business</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">Business / Entity Name <span class="required">*</span></label>
+    <input type="text" class="form-input" name="c_business_name" placeholder="Legal business name" required>
   </div>
 
   <div class="form-group form-row">
-    <div>
-      <label class="form-label">Business Type <span class="required">*</span></label>
-      <select class="form-select" name="c_business_type" required>
-        <option value="" disabled selected>Select type</option>
-        <option>Sole Proprietorship</option>
-        <option>LLC</option>
-        <option>Corporation</option>
-        <option>Partnership</option>
-        <option>Other</option>
-      </select>
-    </div>
     <div>
       <label class="form-label">Industry / Use <span class="required">*</span></label>
       <input type="text" class="form-input" name="c_industry" placeholder="e.g. Restaurant, Salon, Medical" required>
@@ -202,10 +192,6 @@ nav{padding:1rem 1.5rem}
   </div>
 
   <div class="form-group form-row">
-    <div>
-      <label class="form-label">EIN / Tax ID</label>
-      <input type="text" class="form-input" name="c_ein" placeholder="XX-XXXXXXX">
-    </div>
     <div>
       <label class="form-label">Years in Business</label>
       <input type="text" class="form-input" name="c_years_business" placeholder="e.g. 5">
@@ -282,43 +268,10 @@ nav{padding:1rem 1.5rem}
     <textarea class="form-textarea" name="c_notes" placeholder="Any additional details about your business needs, build-out requirements, preferred layout, etc."></textarea>
   </div>
 
-  <div class="form-divider">
-    <h3>Supporting Documents</h3>
-    <p>Upload any relevant documents to support your application</p>
-  </div>
-
-  <div class="form-group">
-    <div class="file-upload-area" id="c-upload-area">
-      <input type="file" multiple accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.xls,.xlsx" onchange="handleFiles(event, 'commercial')">
-      <div class="file-upload-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
-      <div class="file-upload-text">Click to upload or drag files here</div>
-      <div class="file-upload-hint">PDF, DOC, JPG, PNG, XLS accepted. Max 10MB per file.</div>
-    </div>
-    <div class="file-list" id="c-file-list"></div>
-    <div style="margin-top:0.8rem;font-size:0.72rem;color:var(--slate);font-weight:300">
-      Suggested: Business plan, financial statements, proof of insurance, government ID, bank statements, references
-    </div>
-  </div>
-
-  <div class="form-divider">
-    <h3>Authorization</h3>
-  </div>
-
-  <label class="form-checkbox">
-    <input type="checkbox" name="c_consent" required>
-    <span class="checkbox-box"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
-    <span class="checkbox-label">I certify that all information provided is true and accurate. I authorize Rockwell Alexander Corp. to verify the information submitted and conduct background/credit checks as part of the application process.</span>
-  </label>
-
-  <label class="form-checkbox">
-    <input type="checkbox" name="c_terms" required>
-    <span class="checkbox-box"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
-    <span class="checkbox-label">I understand that submitting this application does not guarantee tenancy and that a signed lease agreement is required before occupancy.</span>
-  </label>
-
   <div class="submit-section">
-    <button type="button" class="btn-submit" onclick="submitForm('commercial')">Submit Application</button>
-    <p class="submit-note">Your application will be reviewed within 3-5 business days.</p>
+    <button type="button" class="btn-submit" onclick="submitForm('commercial')">Submit</button>
+    <p class="submit-note">A representative will reach out to discuss your inquiry further.</p>
+    <p style="margin-top:1.5rem"><a href="RA_Commercial_Lease_Application.pdf" download style="color:var(--gold);font-size:0.75rem;font-weight:400;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.3);padding-bottom:2px;transition:border-color 0.3s" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.3)'">&#8595; Download PDF Application</a><span style="display:block;margin-top:0.5rem;font-size:0.72rem;color:var(--slate);font-weight:300">Submit full application in person or via email</span></p>
   </div>
 
 </div>
@@ -571,8 +524,9 @@ nav{padding:1rem 1.5rem}
   </label>
 
   <div class="submit-section">
-    <button type="button" class="btn-submit" onclick="submitForm('residential')">Submit Application</button>
-    <p class="submit-note">Your application will be reviewed within 3-5 business days.</p>
+    <button type="button" class="btn-submit" onclick="submitForm('residential')">Submit</button>
+    <p class="submit-note">A representative will reach out to discuss your inquiry further.</p>
+    <p style="margin-top:1.5rem"><a href="RA_Commercial_Lease_Application.pdf" download style="color:var(--gold);font-size:0.75rem;font-weight:400;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.3);padding-bottom:2px;transition:border-color 0.3s" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.3)'">&#8595; Download PDF Application</a><span style="display:block;margin-top:0.5rem;font-size:0.72rem;color:var(--slate);font-weight:300">Submit full application in person or via email</span></p>
   </div>
 
 </div>
