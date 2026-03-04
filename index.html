@@ -20,7 +20,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.5rem 3rem;display:
 nav.scrolled{background:rgba(13,13,13,0.97);backdrop-filter:blur(20px);padding:1rem 3rem;box-shadow:0 1px 0 rgba(201,168,76,0.1)}
 .logo{display:flex;flex-direction:column;text-decoration:none}
 .logo-main{font-family:var(--serif);font-size:1.6rem;font-weight:600;letter-spacing:0.08em;color:var(--white);line-height:1.1}
-.logo-sub{font-family:var(--sans);font-size:0.6rem;font-weight:400;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-top:2px}
+.logo-sub{display:block;font-family:var(--sans);font-size:0.6rem;font-weight:400;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-top:5px}
 .nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center}
 .nav-links a{font-family:var(--sans);font-size:0.75rem;font-weight:400;letter-spacing:0.15em;text-transform:uppercase;color:var(--pearl);text-decoration:none;position:relative;transition:color 0.3s}
 .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width 0.3s ease}
@@ -212,4 +212,4 @@ if('IntersectionObserver' in window){
 const observer=new IntersectionObserver((entries)=>{entries.forEach((entry)=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}})},{threshold:0.05,rootMargin:'0px 0px 50px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 }else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'))}
-document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();co
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preven
