@@ -294,12 +294,12 @@ nav{padding:1rem 1.5rem}
     </div>
     <div>
       <label class="form-label">Unit Type Preference</label>
-      <select class="form-select" name="r_unit_type">
+      <select class="form-select" name="r_unit_type" id="r_unit_type">
         <option value="" disabled selected>Select preference</option>
         <option>Studio</option>
         <option>1 Bedroom</option>
-        <option>2 Bedroom</option>
-        <option>3+ Bedroom</option>
+        <option data-broadway="hide">2 Bedroom</option>
+        <option data-broadway="hide">3+ Bedroom</option>
         <option>No Preference</option>
       </select>
     </div>
@@ -427,16 +427,6 @@ nav{padding:1rem 1.5rem}
         <option>5+</option>
       </select>
     </div>
-    <div>
-      <label class="form-label">Pets?</label>
-      <select class="form-select" name="r_pets">
-        <option value="" disabled selected>Select</option>
-        <option>No Pets</option>
-        <option>Dog</option>
-        <option>Cat</option>
-        <option>Other</option>
-      </select>
-    </div>
   </div>
 
   <div class="form-group">
@@ -490,24 +480,6 @@ nav{padding:1rem 1.5rem}
   </div>
 
   <div class="form-divider">
-    <h3>Supporting Documents</h3>
-    <p>Upload documents to support your application</p>
-  </div>
-
-  <div class="form-group">
-    <div class="file-upload-area" id="r-upload-area">
-      <input type="file" multiple accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.xls,.xlsx" onchange="handleFiles(event, 'residential')">
-      <div class="file-upload-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
-      <div class="file-upload-text">Click to upload or drag files here</div>
-      <div class="file-upload-hint">PDF, DOC, JPG, PNG, XLS accepted. Max 10MB per file.</div>
-    </div>
-    <div class="file-list" id="r-file-list"></div>
-    <div style="margin-top:0.8rem;font-size:0.72rem;color:var(--slate);font-weight:300">
-      Suggested: Government-issued ID, pay stubs (last 2 months), bank statements, employment letter, prior landlord reference
-    </div>
-  </div>
-
-  <div class="form-divider">
     <h3>Authorization</h3>
   </div>
 
@@ -555,6 +527,16 @@ function switchForm(type) {
   document.getElementById('form-' + type).classList.add('active');
   document.getElementById('success-msg').style.display = 'none';
 }
+
+// --- UNIT TYPE FILTERING ---
+document.querySelector('[name="r_property"]').addEventListener('change', function() {
+  const unitSelect = document.getElementById('r_unit_type');
+  const isBroadway = this.value.includes('18-30 Broadway');
+  unitSelect.querySelectorAll('option[data-broadway="hide"]').forEach(opt => {
+    opt.style.display = isBroadway ? 'none' : '';
+    if (isBroadway && opt.selected) unitSelect.value = '';
+  });
+});
 
 // --- FILE HANDLING ---
 const uploadedFiles = { commercial: [], residential: [] };
